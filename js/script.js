@@ -7,7 +7,7 @@ function printHolidays (holidays) {
       var holidayName = holidays[i].name;
 
       $(".day[data-date='"+holidayDate+"']").addClass("holiday");
-      $(".day[data-date='"+holidayDate+"'].holidayType").text("- "+holidayName);
+      $(".day[data-date='"+holidayDate+"'] .holidayType").text("- "+holidayName);
     }
   }
 }
@@ -25,6 +25,7 @@ $(document).ready(function () {
   var date = "2018-01-01";
 
   var momentDate = moment(date);
+  $(".h1").text(momentDate.format("MMMM YYYY"));
 
   // template
 
@@ -32,6 +33,7 @@ $(document).ready(function () {
   var template = Handlebars.compile(source);
 
   // stampo giorni
+
   for (var i=1; i<= momentDate.daysInMonth(); i++) {
     var day = addZero(i);
     var dateComplete = momentDate.format("YYYY") + "-" + momentDate.format("MM") + "-" + day;
