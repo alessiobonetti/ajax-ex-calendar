@@ -65,4 +65,18 @@ $(document).ready(function () {
       }
     }
   );
+  // Click su prev
+  $(".prev").click(
+    function() {
+      alert("prev");
+    }
+  );
+
+  // click su context
+  $(".next").click(
+    function() {
+      moment(momentDate).add(1, 'MM');
+      console.log(momentDate);
+    }
+  );
 });
